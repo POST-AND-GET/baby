@@ -8,64 +8,40 @@
 
 </head>
 <body>
-<img src="" style="position: absolute;left: 0;top: 0;z-index: 99">
 <button onclick="doInput('inputobj')">uoqu</button>
 <canvas id="cvs" style="position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin: auto;border: 1px solid #333333;"></canvas>
-
+</body>
 <script>
     var cvs = document.querySelector('#cvs');
+
     cvs.width=300;
     cvs.height=400;
     var ctx = cvs.getContext('2d');
-    console.log(cvs);
-    console.log(ctx);
-    ctx.beginPath();
-
-    ctx.moveTo(60,80);
-    ctx.lineTo(120,120);
-    ctx.lineTo(100,190);
-    ctx.lineTo(60,80);
-    //    ctx.strokeStyle='#00ff00';
-    //    ctx.stroke();
-    ctx.fillStyle='#00ff00';
-    ctx.fill();
-    ctx.closePath();
-    var windowURL = window.URL || window.webkitURL;
-    //    ctx.stroke();
-    function doInput(id){
-
-        var inputObj = document.createElement('input');
-        inputObj.type = 'file';
-        inputObj.id = id;
-        inputObj.accept = 'image/png, image/jpeg';
-//        alert(2);
-        inputObj.click();
-//        alert(3);
-        inputObj.onchange = function(){
-            alert(inputObj.value);
-            console.log(inputObj.value);
-            document.querySelector('img').setAttribute('src',inputObj.value);
-//                 getUpImg(inputObj);
+    function readFile(){
+        var file = this.files[0];
+        if(!/image\/\w+/.test(file.type)){
+            alert("请确保文件为图像类型");
+            return false;
         }
-//        alert(4);
-
-    }
-    function getUpImg(obj){
-
-        var file = obj.files[0];
-
         var reader = new FileReader();
         reader.readAsDataURL(file);
-
         reader.onload = function(e){
-//            document.querySelector('img').src=this.result;
-//            alert(this.result);
-//            document.querySelector('img').src=this.result;
-            /*var img = new Image;
-             img.src=this.result;
-             ctx.drawImage(img,50,50);*/
-            console.log(this.result);
+            var img = new Image;
+            img.src=this.result;
+            img.onload = function(){
+                ctx.drawImage(img,0,0,300,400);
+            }
         }
     }
+    function doInput(id){
+        var inputObj = document.createElement('input');
+        inputObj.addEventListener('change',readFile,false);
+        inputObj.type = 'file';
+        inputObj.accept = 'image/*';
+        inputObj.id = id;
+        inputObj.click();
+    }
+
+
 </script>
 </html>
