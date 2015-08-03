@@ -1,0 +1,78 @@
+* {margin: 0;padding: 0;}
+a {color: #000;text-decoration: none;cursor: pointer;outline: none;}
+a:hover {text-decoration: none;color: #000;}
+img {border: none;}
+input{border: none;}
+button{border: none;}
+ol,ul,li {;list-style: none;}
+/*******************/
+img{display: block}
+.pr{position: relative}
+.pa{position: absolute}
+.none{display: none}
+/*******************/
+body{width: 320px;overflow: hidden;}
+.bg{width: 320px;left: 0;top: 0;z-index: 0}
+.t{top: 87px;left: 0}
+.t img{width: 60px;}
+.t .t1{left: 40px;-webkit-animation: textRock1 .5s 1}
+.t .t2{left: 100px;-webkit-animation: textRock2 .5s 1}
+.t .t3{left: 160px;-webkit-animation: textRock3 .5s 1}
+.t .t4{left: 220px;-webkit-animation: textRock4 .5s 1}
+.ping{width: 150px;left: 0;right: 0;margin: auto;top: 239px;-webkit-animation: pRock .3s 1}
+.cloud{left: 0;right: 0;margin: auto;width: 268px;top: 144px;}
+.cloud .y1{left: 0;right:0;margin: auto;top: 70px;width: 46px;opacity: 0;-webkit-transition: opacity .2s ease}
+.cloud .y2{left: 0;right:0;margin: auto;top: 50px;width: 109px;opacity: 0;-webkit-transition: opacity .5s ease}
+.cloud .y3{left: 0;right:0;margin: auto;top: 10px;width: 211px;-webkit-transform: scale(0,0);-webkit-transition: all .5s ease}
+.pai{width: 85px;top: 417px;right: 50px;-webkit-animation: rock 1s infinite}
+.hand{width: 34px;top: 417px;right: 30px;-webkit-animation: handChange 1s  infinite}
+@-webkit-keyframes textRock1 {
+    0%{left: 40px;top: 0px}
+    33%{left: 38px;top: -2px}
+    66%{left: 40px;top: 0px}
+    88%{left: 38px;top: -2px}
+    100%{left: 40px;top: 0px}
+}
+@-webkit-keyframes textRock2 {
+    0%{left: 100px;top: 0px}
+    33%{left: 98px;top: -2px}
+    66%{left: 100px;top: 0px}
+    88%{left: 98px;top: -2px}
+    100%{left: 100px;top: 0px}
+}
+@-webkit-keyframes textRock3 {
+    0%{left: 160px;top: 0px}
+    33%{left: 158px;top: -2px}
+    66%{left: 160px;top: 0px}
+    88%{left: 158px;top: -2px}
+    100%{left: 160px;top: 0px}
+}
+@-webkit-keyframes textRock4 {
+    0%{left: 220px;top: 0px}
+    33%{left: 218px;top: -2px}
+    66%{left: 220px;top: 0px}
+    88%{left: 218px;top: -2px}
+    100%{left: 220px;top: 0px}
+}
+@-webkit-keyframes pRock {
+    0%{-webkit-transform: rotate(0deg);}
+    33%{-webkit-transform: rotate(-10deg);}
+    66%{-webkit-transform: rotate(0deg);}
+    88%{-webkit-transform: rotate(10deg);}
+    100%{-webkit-transform: rotate(0deg);}
+}
+@-webkit-keyframes handChange {
+    0%{-webkit-transform: scale(1,1);}
+    10%{-webkit-transform: scale(1.2,1.2);}
+    25%{-webkit-transform: scale(1,1);}
+    40%{-webkit-transform: scale(1.2,1.2);}
+    55%{-webkit-transform: scale(1,1);}
+    70%{-webkit-transform: scale(1.2,1.2);}
+    71%{-webkit-transform: scale(1,1);}
+    100%{-webkit-transform: scale(1,1);}
+}
+@-webkit-keyframes rock {
+    0%{-webkit-transform: rotate(0deg)}
+    90%{-webkit-transform: rotate(0deg)}
+    100%{-webkit-transform: rotate(-10deg)}
+}
