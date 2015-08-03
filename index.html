@@ -5,11 +5,13 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>优博</title>
     <link rel="stylesheet" href="css/base.css">
-    <script src="js/func.js"></script>
+    <script src="js/func.js" charset="UTF-8"></script>
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
 </head>
 <body class="pr">
-    <img class="pa bg" src="images/bg.jpg">
-    <div></div>
+    <img class="pa bg" src="images/bg1.jpg">
+    <img class="pa fc" src="images/fengche.png">
+    <div class="pa guide"><img src="images/tips-t.jpg"></div>
     <div class="pa t">
         <img class="pa t1 none" src="images/t1.png">
         <img class="pa t2 none" src="images/t2.png">
@@ -24,6 +26,29 @@
     <img class="pa ping" src="images/ping.png">
     <img class="pa pai" src="images/pai.png">
     <img class="pa hand" src="images/hand.png">
+    <div class="pa tips none">
+        <img class="pa" src="images/tips.png">
+        <span class="pa close"></span>
+    </div>
+    <div class="pa form none">
+        <img class="pa" src="images/form.png">
+        <span class="pa close"></span>
+        <input class="pa name" type="text">
+        <input class="pa mobile" type="text">
+        <button class="pa submit"></button>
+    </div>
+    <div class="pa upload none">
+        <div class="pa cvs">
+            <span class="pa evert"></span>
+        </div>
+        <canvas class="pa" id="cvs" width="200" height="144"></canvas>
+        <canvas style="opacity: 0;position: absolute;border: solid #ffffff 1px" id="canvas" width="600" height="400"></canvas>
+
+        <img class="pa go-index" src="images/go-index.png">
+        <img class="pa reset none" src="images/btn-reset.png">
+        <img class="pa up" src="images/btn-upload.png">
+        <img class="pa sub none" src="images/btn-submit.png">
+    </div>
 </body>
-<script src="js/logic.js"></script>
+<script src="js/logic.js?v=1" charset="UTF-8"></script>
 </html>

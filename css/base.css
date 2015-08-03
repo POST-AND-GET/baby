@@ -6,26 +6,47 @@ input{border: none;}
 button{border: none;}
 ol,ul,li {;list-style: none;}
 /*******************/
-img{display: block}
+img{display: block; }
 .pr{position: relative}
 .pa{position: absolute}
 .none{display: none}
 /*******************/
 body{width: 320px;overflow: hidden;}
-.bg{width: 320px;left: 0;top: 0;z-index: 0}
+.bg{width: 320px;left: 0;top: 0;z-index: 0;pointer-events: none;}
+.fc{width: 280px;top: 267px;left: 5px;pointer-events: none;}
+.guide{width: 100px;height: 50px;top: 20px;right: 0;text-align: center}
+.guide img{width: 60px;margin-top: 10px;margin-left: 10px}
 .t{top: 87px;left: 0}
-.t img{width: 60px;}
+.t img{width: 60px;pointer-events: none;}
 .t .t1{left: 40px;-webkit-animation: textRock1 .5s 1}
 .t .t2{left: 100px;-webkit-animation: textRock2 .5s 1}
 .t .t3{left: 160px;-webkit-animation: textRock3 .5s 1}
 .t .t4{left: 220px;-webkit-animation: textRock4 .5s 1}
 .ping{width: 150px;left: 0;right: 0;margin: auto;top: 239px;-webkit-animation: pRock .3s 1}
 .cloud{left: 0;right: 0;margin: auto;width: 268px;top: 144px;}
-.cloud .y1{left: 0;right:0;margin: auto;top: 70px;width: 46px;opacity: 0;-webkit-transition: opacity .2s ease}
-.cloud .y2{left: 0;right:0;margin: auto;top: 50px;width: 109px;opacity: 0;-webkit-transition: opacity .5s ease}
-.cloud .y3{left: 0;right:0;margin: auto;top: 10px;width: 211px;-webkit-transform: scale(0,0);-webkit-transition: all .5s ease}
+.cloud .y1{left: 0;right:0;margin: auto;top: 70px;width: 46px;opacity: 0;-webkit-transition: opacity .2s ease;pointer-events: none;}
+.cloud .y2{left: 0;right:0;margin: auto;top: 50px;width: 109px;opacity: 0;-webkit-transition: opacity .5s ease;pointer-events: none;}
+.cloud .y3{left: 0;right:0;margin: auto;top: 10px;width: 211px;-webkit-transform: scale(0,0);-webkit-transition: all .5s ease;pointer-events: none;}
 .pai{width: 85px;top: 417px;right: 50px;-webkit-animation: rock 1s infinite}
-.hand{width: 34px;top: 417px;right: 30px;-webkit-animation: handChange 1s  infinite}
+.hand{width: 34px;top: 417px;right: 30px;-webkit-animation: handChange 1s  infinite;pointer-events: none;}
+.tips{width:320px;height: 480px;left: 0;right: 0;top: 60px;margin:auto;}
+.tips img{left: 0;right: 0;top: 0;bottom: 0;margin:auto;width: 270px;pointer-events: none;}
+.tips .close{display: block;right: 50px;;top:90px;width: 50px;height: 50px;}
+.form{width:320px;height: 480px;left: 0;right: 0;top: 60px;margin:auto;}
+.form img{left: 0;right: 0;top: 0;bottom: 0;margin:auto;width: 268px;pointer-events: none;}
+.form .close{display: block;right: 40px;;top:110px;width: 50px;height: 50px;}
+.form .name{width: 150px;height: 25px;top: 195px;left: 100px;background: rgba(0,0,0,0);border: none;outline: none;color: #ffffff}
+.form .mobile{width: 150px;height: 25px;top: 250px;left: 100px;background: rgba(0,0,0,0);border: none;outline: none;color: #ffffff}
+.form .submit{width: 100px;height: 50px;top: 290px;left: 110px;background: rgba(0,0,0,0);border: none;outline: none;}
+.upload{right: 0;left: 0;top: 160px;margin: auto;width: 320px;height: 480px}
+.cvs{background: url("../images/pf.png") no-repeat;background-size: 200px 144px;right: 0;left: 0;top: 5px;margin: auto;width: 200px;height: 144px;z-index: 1}
+#cvs{right: 0;left: 0;top: 5px;margin: auto;}
+.evert{display: block;width: 30px;height: 30px;right: 0px;}
+.upload img{width: 100px;top: 210px}
+.go-index{left: 40px}
+.up{right: 40px}
+.reset{left: 40px}
+.sub{right: 40px}
 @-webkit-keyframes textRock1 {
     0%{left: 40px;top: 0px}
     33%{left: 38px;top: -2px}
