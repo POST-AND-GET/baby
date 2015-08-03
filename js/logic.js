@@ -2,6 +2,8 @@
  * Created by adwo15513 on 2015/7/31.
  */
 window.onload = function() {
+
+    resetPage();
     $('.ping').addEventListener('webkitAnimationStart',function(){
         $('.t1').style.display='block';
         setTimeout(function(){
@@ -13,8 +15,7 @@ window.onload = function() {
                 },200)
             },200)
         },500)
-    })
-    resetPage();
+    });
     $('.ping').addEventListener('webkitAnimationEnd',function(){
         $('.y1').style.opacity=1;
         setTimeout(function(){
@@ -27,8 +28,10 @@ window.onload = function() {
                 },200)
             },200)
         },200)
+    });
+    $('.pai').addEventListener('touchstart',function(){
+        alert(1)
     })
-
 
 }
 window.onresize = function() {
