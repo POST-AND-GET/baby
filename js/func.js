@@ -32,7 +32,7 @@ function canvasInit1(){
 function readFile(){
     var file = this.files[0];
     if(!/image\/\w+/.test(file.type)){
-        alert("��ȷ���ļ�Ϊͼ������");
+        alert("请选择图片格式！");
         return false;
     }
     var reader = new FileReader();
@@ -99,7 +99,7 @@ function callbackInfo(data){
     console.log(data)
     if(data[0].success==1){
         resultid = data[0].id;
-        //localStorage.resultid=data[0].id;
+        localStorage.resultid=data[0].id;
         console.log(resultid)
         $$('.form').style.display = 'none';
         $$('.fc').style.display = 'none';
@@ -115,7 +115,7 @@ function callbackInfo(data){
     }
 }
 
-function Ajax(url){
+function Ajax1(url){
     var script = document.createElement('script');
     script.setAttribute("type","text/javascript");
     script.src = url;
