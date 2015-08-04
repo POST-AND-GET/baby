@@ -50,6 +50,11 @@ window.onload = function() {
 
     canvasInit();
     canvasInit1() ;
+    if(localStorage.resultid){
+        resultid=localStorage.resultid;
+        $$('.form').style.display = 'none';
+        $$('.upload').style.display = 'block';
+    }
     $$('.submit').addEventListener('touchstart', function() {
         var name = $$('.name').value;
         var mobile = $$('.mobile').value;
@@ -59,27 +64,7 @@ window.onload = function() {
         }
     });
     $$('.sub').addEventListener('touchstart', function() {
-        var _u = "http://testf.zhangkuo.net/advmessage/advimage/saveImgJsonP.action?advid=30380&resultid=" + resultid;
-        //var xmlHttp;
-        //try { xmlHttp = new XMLHttpRequest(); }
-        //catch( e ){
-        //    try { xmlHttp = new ActiveXObject( "Msxml2.XMLHTTP" );}
-        //    catch ( e ){
-        //        try { xmlHttp = new ActiveXObject( "Microsoft.XMLHTTP" );}
-        //        catch( e ) { alert("您的浏览器不支持AJAX！");return false;}
-        //    }
-        //}
-        //xmlHttp.open('POST',_u,true);
-        //xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-        //xmlHttp.onreadystatechange = function () {
-        //    if (xmlHttp.readyState == 4) {
-        //        if (xmlHttp.status == 200) {
-        //           console.log(xmlHttp.responseText);
-        //        } else {
-        //            console.log(xmlHttp.responseText);
-        //        }
-        //    }
-        //}
+        var _u = "http://test.zhangkuo.net/advmessage/advimage/saveImg.action?advid=30380&resultid=" + resultid;
         $.ajax({
             url: _u,
             type: 'POST',
@@ -88,10 +73,25 @@ window.onload = function() {
             timeout: 60000,
             dataType:'json',
             success: function(d){
-            console.log(d)
-        }});
+                console.log(d)
+                if(d.success=='1'){
+                    if(localStorage.resultid){
+                        localStorage.removeItem('resultid');
+                    }
+                    location.href = 'success.html';
+                }else{
+                    localStorage.resultid=resultid;
+                    alert('非常抱歉，上传失败。');
+                }
 
-        //Ajax(_u);
+            },
+            error: function(e){
+                console.log(e)
+                localStorage.resultid=resultid;
+                alert('抱歉，由于网络原因上传失败，请检查网络');
+
+            }
+        });
     });
 }
 window.onresize = function() {

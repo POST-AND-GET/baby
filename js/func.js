@@ -99,6 +99,7 @@ function callbackInfo(data){
     console.log(data)
     if(data[0].success==1){
         resultid = data[0].id;
+        //localStorage.resultid=data[0].id;
         console.log(resultid)
         $$('.form').style.display = 'none';
         $$('.upload').style.display = 'block';
@@ -107,13 +108,11 @@ function callbackInfo(data){
         alert(data[0].info);
     }
 }
-function callbackImg(data){
-    console.log(data)
-}
+
 function Ajax(url){
     var script = document.createElement('script');
     script.setAttribute("type","text/javascript");
     script.src = url;
     document.body.appendChild(script);
-    //script.remove();
+    script.remove();
 }
