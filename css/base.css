@@ -39,8 +39,8 @@ body{width: 320px;overflow: hidden;}
 .form .mobile{width: 150px;height: 25px;top: 250px;left: 100px;background: rgba(0,0,0,0);border: none;outline: none;color: #ffffff}
 .form .submit{width: 100px;height: 50px;top: 290px;left: 110px;background: rgba(0,0,0,0);border: none;outline: none;}
 .upload{right: 0;left: 0;top: 160px;margin: auto;width: 320px;height: 480px}
-.cvs{background: url("../images/pf.png") no-repeat;background-size: 200px 144px;right: 0;left: 0;top: 5px;margin: auto;width: 200px;height: 144px;z-index: 1}
-#cvs{right: 0;left: 0;top: 5px;margin: auto;}
+.cvs{background: url("../images/pf.png") no-repeat;background-size: 200px 144px;right: 0;left: 0;top: 5px;margin: auto;width: 200px;height: 144px;z-index: 1;}
+#cvs{right: 0;left: 0;top: 12px;margin: auto;border-radius: 10px}
 .evert{display: block;width: 30px;height: 30px;right: 0px;}
 .upload img{width: 100px;top: 210px}
 .go-index{left: 40px}

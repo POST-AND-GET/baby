@@ -12,12 +12,12 @@ function $$(s){
 var ctx, cvs, ctx1, cvs1,strDataURI1,resultid;
 function canvasInit(){
     cvs = $$('#cvs');
-    cvs.width = 200;
-    cvs.height = 144;
+    cvs.width = 190;
+    cvs.height = 137;
     ctx = cvs.getContext('2d');
-    ctx.clearRect(-98,-75,400,244);
+    ctx.clearRect(-87,-58,400,244);
     ctx.fillStyle = '#ffffff';
-    ctx.fillRect(11,17,175,177);
+    ctx.fillRect(0,0,200,137);
 }
 function canvasInit1(){
     cvs1 = $$('#canvas');
@@ -42,7 +42,7 @@ function readFile(){
         img.src=this.result;
         img.onload = function(){
 
-            ctx.drawImage(img,11,17,175,117);
+            ctx.drawImage(img,0,0,190,137);
             ctx1.drawImage(img,0,0,600,400);
 
             $$('.go-index').style.display = 'none';
@@ -51,13 +51,13 @@ function readFile(){
             $$('.sub').style.display = 'block';
 
             strDataURI1 = cvs1.toDataURL();
-            ctx.translate(98,75);
+            ctx.translate(87,58);
             ctx1.translate(300,200);
             $$('.evert').addEventListener('touchstart',function(){
-                ctx.clearRect(-98,-75,400,244);
-                ctx.fillRect(-87,-58,175,177);
+                ctx.clearRect(-95,-68,400,244);
+                ctx.fillRect(-95,-68,300,400);
                 ctx.rotate(-90 * Math.PI / 180);
-                ctx.drawImage(img,-87,-58,175,117);
+                ctx.drawImage(img,-95,-68,190,137);
                 ctx1.clearRect(-300,-200,600,400);
                 ctx1.fillRect(-300,-200,600,400);
                 ctx1.rotate(-90 * Math.PI / 180);
