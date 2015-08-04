@@ -1,5 +1,5 @@
 window.onload = function() {
-    resetPage();
+
     $$('.ping').addEventListener('webkitAnimationStart', function() {
         $$('.t1').style.display = 'block';
         setTimeout(function() {
@@ -25,6 +25,7 @@ window.onload = function() {
             }, 200)
         }, 200)
     });
+    resetPage();
     $$('.pai').addEventListener('touchstart', function(e) {
         $$('.form').style.display = 'block';
         $$('.form .close').onclick = function() {
@@ -53,6 +54,12 @@ window.onload = function() {
     if(localStorage.resultid){
         resultid=localStorage.resultid;
         $$('.form').style.display = 'none';
+        $$('.fc').style.display = 'none';
+        $$('.guide').style.display = 'none';
+        $$('.cloud').style.display = 'none';
+        $$('.ping').style.display = 'none';
+        $$('.pai').style.display = 'none';
+        $$('.hand').style.display = 'none';
         $$('.upload').style.display = 'block';
     }
     $$('.submit').addEventListener('touchstart', function() {
@@ -81,14 +88,14 @@ window.onload = function() {
                     location.href = 'success.html';
                 }else{
                     localStorage.resultid=resultid;
-                    alert('·Ç³£±§Ç¸£¬ÉÏ´«Ê§°Ü¡£');
+                    alert('éå¸¸æŠ±æ­‰ï¼Œä¸Šä¼ å¤±è´¥ã€‚');
                 }
 
             },
             error: function(e){
                 console.log(e)
                 localStorage.resultid=resultid;
-                alert('±§Ç¸£¬ÓÉÓÚÍøÂçÔ­ÒòÉÏ´«Ê§°Ü£¬Çë¼ì²éÍøÂç');
+                alert('æŠ±æ­‰ï¼Œç”±äºç½‘ç»œåŸå› ä¸Šä¼ å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘ç»œ');
 
             }
         });

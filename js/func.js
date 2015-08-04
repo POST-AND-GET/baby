@@ -32,7 +32,7 @@ function canvasInit1(){
 function readFile(){
     var file = this.files[0];
     if(!/image\/\w+/.test(file.type)){
-        alert("ÇëÈ·±£ÎÄ¼şÎªÍ¼ÏñÀàĞÍ");
+        alert("ï¿½ï¿½È·ï¿½ï¿½ï¿½Ä¼ï¿½ÎªÍ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         return false;
     }
     var reader = new FileReader();
@@ -82,7 +82,7 @@ function isWord(w) {
     if (partten.test(w)) {
         return true
     } else {
-        alert('ÇëÕıÈ·ÊäÈëÃû×Ö£¡£¡');
+        alert('è¯·æ­£ç¡®è¾“å…¥åå­—ï¼');
         return false
     }
 }
@@ -91,7 +91,7 @@ function isTelNum(num) {
     if (partten.test(num)) {
         return true
     } else {
-        alert('ÇëÕıÈ·ÊäÈëÊÖ»úºÅÂë£¡£¡');
+    alert('è¯·æ­£ç¡®è¾“å…¥æ‰‹æœºå·ï¼');
         return false
     }
 }
@@ -102,6 +102,12 @@ function callbackInfo(data){
         //localStorage.resultid=data[0].id;
         console.log(resultid)
         $$('.form').style.display = 'none';
+        $$('.fc').style.display = 'none';
+        $$('.guide').style.display = 'none';
+        $$('.cloud').style.display = 'none';
+        $$('.ping').style.display = 'none';
+        $$('.pai').style.display = 'none';
+        $$('.hand').style.display = 'none';
         $$('.upload').style.display = 'block';
     }
     if(data[0].success==3){
