@@ -98,10 +98,10 @@ function isTelNum(num) {
     }
 }
 function callbackInfo(data){
-    console.log(data)
     if(data[0].success==1){
         resultid = data[0].id;
         localStorage.resultid=data[0].id;
+        localStorage.userinfo=userinfo;
         console.log(resultid)
         $$('.form').style.display = 'none';
         $$('.fc').style.display = 'none';

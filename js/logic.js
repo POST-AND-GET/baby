@@ -72,7 +72,7 @@ window.onload = function() {
         }
     });
     $$('.sub').addEventListener('touchstart', function() {
-        var _u = "http://test.zhangkuo.net/advmessage/advimage/saveImg.action?advid=30380&resultid=" + resultid+'&userinfo='+userinfo;
+        var _u = "http://test.zhangkuo.net/advmessage/advimage/saveImg.action?advid=30380&resultid=" + resultid+'&userinfo='+localStorage.userinfo;
         $.ajax({
             url: _u,
             type: 'POST',
