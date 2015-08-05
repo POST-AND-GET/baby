@@ -97,10 +97,33 @@ function isTelNum(num) {
         return false
     }
 }
+function Ajax(url){
+    var script = document.createElement('script');
+    script.setAttribute("type","text/javascript");
+    script.src = url;
+    document.body.appendChild(script);
+    script.remove();
+}
+function callbackGetinfo(data){
+    console.log(data);
+    if(data.success==1){
+        resultid = data.resutid;
+        $$('.form').style.display = 'none';
+        $$('.fc').style.display = 'none';
+        $$('.guide').style.display = 'none';
+        $$('.cloud').style.display = 'none';
+        $$('.ping').style.display = 'none';
+        $$('.pai').style.display = 'none';
+        $$('.hand').style.display = 'none';
+        $$('.upload').style.display = 'block';
+    }else{
+        alert(info.info);
+    }
+}
 function callbackInfo(data){
     if(data[0].success==1){
         resultid = data[0].id;
-        localStorage.resultid=data[0].id;
+        //localStorage.resultid=data[0].id;
         localStorage.userinfo=userinfo;
         console.log(resultid)
         $$('.form').style.display = 'none';
@@ -113,14 +136,29 @@ function callbackInfo(data){
         $$('.upload').style.display = 'block';
     }
     if(data[0].success==3){
-        alert(data[0].info);
+        var _uu = "http://test.zhangkuo.net/advmessage/advimage/getUserinfo.action?advid=30380&userinfo="+$$('.mobile').value/*+"&callback=callbackGetinfo"*/;
+        $.ajax({
+            url: _uu,
+            type: 'GET',
+            success: function(d){
+                d = JSON.parse(d);
+                console.log(d)
+                if(d.success==1){
+                    resultid = data.resutid;
+                    $$('.form').style.display = 'none';
+                    $$('.fc').style.display = 'none';
+                    $$('.guide').style.display = 'none';
+                    $$('.cloud').style.display = 'none';
+                    $$('.ping').style.display = 'none';
+                    $$('.pai').style.display = 'none';
+                    $$('.hand').style.display = 'none';
+                    $$('.upload').style.display = 'block';
+                }else{
+                    alert(d.info);
+                }
+            }
+
+        });
     }
 }
 
-function Ajax(url){
-    var script = document.createElement('script');
-    script.setAttribute("type","text/javascript");
-    script.src = url;
-    document.body.appendChild(script);
-    script.remove();
-}

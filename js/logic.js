@@ -51,7 +51,7 @@ window.onload = function() {
 
     canvasInit();
     canvasInit1() ;
-    if(localStorage.resultid){
+    /*if(localStorage.resultid){
         resultid=localStorage.resultid;
         $$('.form').style.display = 'none';
         $$('.fc').style.display = 'none';
@@ -61,13 +61,13 @@ window.onload = function() {
         $$('.pai').style.display = 'none';
         $$('.hand').style.display = 'none';
         $$('.upload').style.display = 'block';
-    }
+    }*/
     $$('.submit').addEventListener('touchstart', function() {
         var name = $$('.name').value;
         var mobile = $$('.mobile').value;
         if (isWord(name) && isTelNum(mobile)) {
             var _u = "http://test.zhangkuo.net/advmessage/adv/addResultJsonP.action?advid=30380&realname=" + name + "&mobile=" + mobile+"&callback=callbackInfo";
-            userinfo=mobile+'_'+name;
+            userinfo=mobile;
             Ajax(_u);
         }
     });
@@ -83,9 +83,9 @@ window.onload = function() {
             success: function(d){
                 console.log(d)
                 if(d.success=='1'){
-                    if(localStorage.resultid){
-                        localStorage.removeItem('resultid');
-                    }
+                    //if(localStorage.resultid){
+                    //    localStorage.removeItem('resultid');
+                    //}
                     location.href = 'success.html';
                 }else{
                     localStorage.resultid=resultid;
