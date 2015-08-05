@@ -64,13 +64,37 @@
             alert(msg);
         }
     }
-    resetPage()
+    resetPage();
+    window.onresize = function(){
+        resetPage()
+    }
+    function callbackSubmit(data){
+        console.log(data)
+        if(data[0].success==1){
+            location.href = 'success-v.html';
+//            console.log(data[0])
+        }else if(data[0].success==2){
+            alert(data[0].info);
+
+        }else{
+            location.href = 'fail-v.html';
+//            console.log(data[0])
+        }
+    }
+    function Ajax(url){
+        var script = document.createElement('script');
+        script.setAttribute("type","text/javascript");
+        script.src = url;
+        document.body.appendChild(script);
+        script.remove();
+    }
     $$('.sub').addEventListener('touchstart',function(){
         var code = $$('.code').value;
         var num = $$('.num').value;
         var mobile = $$('.mobile').value;
         if(isNull(code,'领取码不能为空！！')&&isNull(num,'店面编码不能为空！！')&&isTelNum(mobile)){
-
+            var _u = 'http://test.zhangkuo.net/advmessage/advsynutra/getCode.action?mobile='+mobile+'&shopcode='+num+'&code='+code+'&callback=callbackSubmit';
+            Ajax(_u);
         }
     })
 </script>

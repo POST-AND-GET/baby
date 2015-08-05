@@ -115,7 +115,7 @@ function callbackInfo(data){
     }
 }
 
-function Ajax1(url){
+function Ajax(url){
     var script = document.createElement('script');
     script.setAttribute("type","text/javascript");
     script.src = url;
