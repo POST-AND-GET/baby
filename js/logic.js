@@ -67,7 +67,7 @@ window.onload = function() {
         var mobile = $$('.mobile').value;
         if (isWord(name) && isTelNum(mobile)) {
             var _u = "http://test.zhangkuo.net/advmessage/adv/addResultJsonP.action?advid=30380&realname=" + name + "&mobile=" + mobile+"&callback=callbackInfo";
-            userinfo=mobile;
+            userinfo=mobile+'_'+name;
             Ajax(_u);
         }
     });
