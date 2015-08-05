@@ -45,7 +45,7 @@ window.onload = function() {
         doInput('inputObj')
     });
     $$('.reset').addEventListener('touchstart', function() {
-        canvasInit();
+
         doInput('inputObj1')
     });
 
@@ -67,11 +67,12 @@ window.onload = function() {
         var mobile = $$('.mobile').value;
         if (isWord(name) && isTelNum(mobile)) {
             var _u = "http://test.zhangkuo.net/advmessage/adv/addResultJsonP.action?advid=30380&realname=" + name + "&mobile=" + mobile+"&callback=callbackInfo";
+            userinfo=mobile;
             Ajax(_u);
         }
     });
     $$('.sub').addEventListener('touchstart', function() {
-        var _u = "http://test.zhangkuo.net/advmessage/advimage/saveImg.action?advid=30380&resultid=" + resultid;
+        var _u = "http://test.zhangkuo.net/advmessage/advimage/saveImg.action?advid=30380&resultid=" + resultid+'&userinfo='+userinfo;
         $.ajax({
             url: _u,
             type: 'POST',

@@ -9,7 +9,7 @@ function resetPage() {
 function $$(s){
     return document.querySelector(s);
 }
-var ctx, cvs, ctx1, cvs1,strDataURI1,resultid;
+var ctx, cvs, ctx1, cvs1,strDataURI1,resultid,userinfo;
 function canvasInit(){
     cvs = $$('#cvs');
     cvs.width = 190;
@@ -30,6 +30,8 @@ function canvasInit1(){
 }
 
 function readFile(){
+    canvasInit();
+    canvasInit1();
     var file = this.files[0];
     if(!/image\/\w+/.test(file.type)){
         alert("请选择图片格式！");
